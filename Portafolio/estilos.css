@@ -1,0 +1,260 @@
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #0b1120;
+    color: white;
+}
+
+/* El contenido principal ocupa el espacio sobrante y empuja el pie al fondo */
+main {
+    flex: 1;
+}
+
+/* MENU DE NAVEGACIÓN */
+
+header {
+    background-color: #111a2e;
+    padding: 20px 8%;
+    border-bottom: 1px solid #26344e;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #38bdf8;
+    font-size: 25px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #38bdf8;
+}
+
+/* PORTADA */
+
+.inicio {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* texto a la izquierda, foto a la derecha */
+    gap: 40px;
+    padding: 60px 10%;
+    background: linear-gradient(135deg, #0b1120, #16233c);
+}
+
+.contenido {
+    max-width: 750px;
+    flex: 1;
+}
+
+.etiqueta {
+    color: #38bdf8;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.inicio h1 {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.inicio h1 span {
+    color: #38bdf8;
+}
+
+.inicio h2 {
+    color: #b9c7dc;
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.descripcion {
+    color: #cbd5e1;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* BOTON */
+
+.boton {
+    display: inline-block;
+    background-color: #0284c7;
+    color: white;
+    text-decoration: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: #38bdf8;
+    transform: translateY(-3px);
+}
+
+/* SECCIONES */
+
+.seccion {
+    padding: 80px 10%;
+}
+
+.seccion h2 {
+    color: #38bdf8;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.seccion > p,
+.seccion .texto > p {
+    color: #cbd5e1;
+    line-height: 1.8;
+    font-size: 17px;
+    max-width: 850px;
+}
+
+/* SOBRE MÍ: TEXTO + FOTO AL LADO */
+
+.sobre-mi {
+    display: flex;
+    align-items: center;   /* centra verticalmente texto y foto */
+    gap: 40px;             /* espacio entre ambos */
+}
+
+.sobre-mi .texto {
+    flex: 1;               /* el texto ocupa el espacio sobrante */
+}
+
+.Expo {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+
+
+.foto {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;        /* evita que la foto se aplaste */
+    border: 3px solid #38bdf8;
+}
+
+/* TARJETAS */
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.tarjeta {
+    background-color: #16233c;
+    border: 1px solid #263b5c;
+    padding: 30px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+}
+
+.tarjeta h3 {
+    color: #38bdf8;
+    margin-bottom: 15px;
+}
+
+.tarjeta p {
+    color: #cbd5e1;
+    line-height: 1.7;
+}
+
+/* PIE DE PAGINA */
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 30px;
+    background-color: #111a2e;
+    color: #94a3b8;
+    line-height: 1.8;
+    border-top: 1px solid #26344e;
+}
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .inicio {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .inicio h1 {
+        font-size: 38px;
+    }
+
+    .inicio h2 {
+        font-size: 21px;
+    }
+
+    .seccion {
+        padding: 55px 7%;
+    }
+
+    /* La foto pasa debajo del texto en pantallas pequeñas */
+    .sobre-mi {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .foto {
+        width: 200px;
+        height: 200px;
+    }
+}
